@@ -54,6 +54,7 @@ function cleanupText(str) {
         .replace(/[^\w\s\u00C0-\u024F\u1E00-\u1EFF]/g, '') // Xóa ký tự đặc biệt
         .replace(/\.+$/, '') // Xóa dấu chấm cuối
         .replace(/\s+/g, ' ') // Chuẩn hóa khoảng trắng
+        .toLowerCase() // Chuyển thành chữ thường
         .trim(); // Xóa khoảng trắng đầu cuối
 }
 
