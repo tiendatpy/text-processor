@@ -418,6 +418,7 @@ function convertToLowerCaseMethod() {
 function clearAll() {
     document.getElementById('inputText').value = '';
     document.getElementById('resultText').value = '';
+    updateStats(); // Cập nhật lại stats về 0 và xóa cảnh báo
 }
 
 // Hàm demo các phương pháp khác nhau (chạy trong console)
