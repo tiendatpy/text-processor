@@ -60,7 +60,7 @@ function cleanupText(str) {
 
 // Phương pháp 13: Chuyển tất cả thành chữ thường
 function convertToLowerCase(str) {
-    return str.toLowerCase();
+    return str.toLowerCase().trim();
 }
 
 // Phương pháp 4: Xóa dấu nháy sử dụng split và join (bao gồm tất cả Unicode)
@@ -421,37 +421,6 @@ function clearAll() {
     updateStats(); // Cập nhật lại stats về 0 và xóa cảnh báo
 }
 
-// Hàm demo các phương pháp khác nhau (chạy trong console)
-function demoAllMethods() {
-    const testString = 'Hello "World" and \'JavaScript\' programming \u201Ctest\u201D with special@#$%^&*()chars... end with dots...';
-    
-    console.log('=== DEMO CÁC PHƯƠNG PHÁP XỬ LÝ CHUỖI ===');
-    console.log('Chuỗi gốc:', testString);
-    console.log('');
-    
-    console.log('🔤 LOẠI BỎ DẤU NHÁY:');
-    console.log('1. Regex - Xóa tất cả dấu nháy:', removeAllQuotes(testString));
-    console.log('2. Regex - Chỉ dấu nháy kép:', removeDoubleQuotes(testString));
-    console.log('3. Regex - Chỉ dấu nháy đơn:', removeSingleQuotes(testString));
-    console.log('');
-    
-    console.log('🧹 LOẠI BỎ KÝ TỰ ĐẶC BIỆT:');
-    console.log('4. Xóa ký tự đặc biệt:', removeSpecialCharacters(testString));
-    console.log('5. Xóa dấu chấm cuối:', removeTrailingPeriods(testString));
-    console.log('6. Xóa tất cả dấu chấm:', removeAllPeriods(testString));
-    console.log('');
-    
-    console.log('🚀 KẾT HỢP:');
-    console.log('7. Xóa đặc biệt + dấu chấm cuối:', removeSpecialAndTrailingPeriods(testString));
-    console.log('8. Xóa tất cả:', removeAll(testString));
-    console.log('9. Dọn dẹp hoàn toàn:', cleanupText(testString));
-    
-    // Test riêng với Unicode quotes
-    const unicodeTest = 'Test \u201CUnicode\u201D quotes \u2018and\u2019 special!@#$%...';
-    console.log('\n=== TEST VỚI UNICODE VÀ KÝ TỰ ĐẶC BIỆT ===');
-    console.log('Input:', unicodeTest);
-    console.log('Output (cleanup):', cleanupText(unicodeTest));
-}
 
 // Hàm debug để xem Unicode codes của các ký tự trong chuỗi
 function debugString(str) {
@@ -522,7 +491,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('🚀 Ứng dụng tối ưu hóa tên file đã sẵn sàng!');
     console.log('💡 Các lệnh console hữu ích:');
-    console.log('   - demoAllMethods() - Demo tất cả phương pháp');
     console.log('   - testUnicodeQuotes() - Test Unicode quotes');
     console.log('   - debugString("your text") - Debug chuỗi ký tự');
     console.log('📝 Tính năng sao chép:');
